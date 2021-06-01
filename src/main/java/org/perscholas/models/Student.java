@@ -42,8 +42,7 @@ public class Student implements Serializable {
     String sEmail;
     @NonNull @NotBlank
     String sPassword;
-    @Column(columnDefinition="tinyint(1) default 1")
-    boolean sActive = true;
+
 
 
     @PostConstruct

@@ -34,9 +34,9 @@ public class AppStartupRunner implements CommandLineRunner {
 
         log.info("*** start student sql ***");
 
-        studentRepo.save(new Student("habboubi","habboubi@gmail.com","password"));
-        studentRepo.save(new Student("admin","admin@gmail.com","password"));
-        studentRepo.save(new Student("student_one","student_one@gmail.com","password"));
+        studentRepo.save(new Student("habboubi","habboubi@gmail.com","$2y$04$KINuY4RJQECd7ZwWuszVn.8o.yBezA3wN5nWsnUMK523rRxvdrzeC"));
+        studentRepo.save(new Student("admin","admin@gmail.com","$2y$04$KINuY4RJQECd7ZwWuszVn.8o.yBezA3wN5nWsnUMK523rRxvdrzeC"));
+        studentRepo.save(new Student("student_one","student_one@gmail.com","$2y$04$KINuY4RJQECd7ZwWuszVn.8o.yBezA3wN5nWsnUMK523rRxvdrzeC"));
 
         log.info("*** end student sql ***");
 
