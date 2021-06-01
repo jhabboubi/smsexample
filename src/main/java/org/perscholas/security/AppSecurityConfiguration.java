@@ -21,11 +21,17 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+
+        3.
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    //3
     @Autowired
     private AppUserDetailsService  appUserDetailsService;
 
@@ -36,12 +42,14 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return provider;
 
     }
-
+    //4
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
 
+
+    //1
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -57,7 +65,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().invalidateHttpSession(true).clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll().and().exceptionHandling().accessDeniedPage("/403");
     }
-
+    //2
     @Override
     public void configure(final WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/imgs/**");

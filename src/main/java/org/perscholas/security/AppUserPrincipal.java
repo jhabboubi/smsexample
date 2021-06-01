@@ -8,6 +8,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
+/*
+            1. begin here
+
+ */
+
+
 public class AppUserPrincipal implements UserDetails {
 
     private Student student;
