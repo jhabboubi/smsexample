@@ -16,4 +16,10 @@ public class HomeController {
         return "template";
     }
 
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
+
+
 }
