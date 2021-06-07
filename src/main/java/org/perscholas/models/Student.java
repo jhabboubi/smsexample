@@ -2,8 +2,10 @@ package org.perscholas.models;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -17,6 +19,7 @@ import java.io.Serializable;
 @Entity
 //springboot
 @Component
+@Slf4j
 public class Student implements Serializable {
     static final long serialVersionUID = 6381462249347345007L;
 
@@ -39,6 +42,10 @@ public class Student implements Serializable {
     @NonNull @NotBlank
     String sPassword;
 
+    @PostConstruct
+    void constructed(){
+        log.trace("Constructed");
+    }
 
 
 
